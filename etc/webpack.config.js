@@ -1,16 +1,31 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/app/index.js',
+  entry: {
+    vendors: ['babelify/polyfill',
+             'react',
+             'svg4everybody',
+             'classnames',
+             'ellipsize',
+             'es6-promise',
+             'moment',
+             'react-transition-manager',
+             'scrollmagic'],
+    app: './src/app/index.js'
+  },
   output: {
     path: './public/js',
     filename: 'app.wp.js',
-    // pathinfo: true
   },
-  debug: true,
-  devtool: 'inline-source-map',
+  // debug: true,
+  // devtool: 'inline-source-map',
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors.js')
+    new webpack.optimize.CommonsChunkPlugin({path: './public/js',
+                                             name: 'vendors',
+                                             filename: 'vendors.wp.js',
+                                             minChunks: Infinity}),
+    new webpack.optimize.UglifyJsPlugin({sourceMap: false,
+                                         warnings: false})
   ],
   resolve: {
       // alias: {
