@@ -10,13 +10,19 @@
     "css": "./src/scripts/css.sh",
     "images": "./src/scripts/images.sh",
     "css-watch": "echo 'not implemented'",
-    "test": "mocha --compilers js:./src/app/lib/testdom.js,js:babel/register $(find test -name '*.js')"
+    "test": "mocha --compilers js:./src/app/lib/testdom.js,js:babel/register $(find test -name '*.js')",
+    "pack": "webpack --config etc/webpack.config.js"
   },
   "aliasify": "./src/app/aliases.json",
   "dependencies": {
     "aliasify": "1.7.2",
     "autoprefixer": "6.0.3",
     "babel": "5.8.21",
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-runtime": "*",
+    "transform-loader": "0.2.3",
+    "webpack": "*",
     "babelify": "6.3.0",
     "browserify": "11.2.0",
     "browsernizr": "1.1.0",
