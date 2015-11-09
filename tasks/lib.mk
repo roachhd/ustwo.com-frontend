@@ -9,7 +9,7 @@ endif
 # this is passed on to the server side React renderer to be able to reach the proxy
 DOCKER_PROXY_HOST ?= docker.ustwo.com
 define docker_host
---add-host $(DOCKER_PROXY_HOST):172.17.42.1
+--add-host $(DOCKER_PROXY_HOST):172.17.0.1
 endef
 
 define project_labels

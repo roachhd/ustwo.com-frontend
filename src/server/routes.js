@@ -3,6 +3,7 @@ import babelify from 'babelify';
 import aliasify from 'aliasify';
 import express from 'express';
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import Helmet from 'react-helmet';
 import omit from 'lodash/object/omit';
 
@@ -18,7 +19,7 @@ function renderApp(req, res) {
     Flux.init(req.protocol + '://' + req.hostname + req.originalUrl, req.get('Host-API'), `https://${process.env.DOCKER_PROXY_HOST}:${process.env.PROXY_HTTPS_PORT}`)
       .then((state) => {
         const App = React.createFactory(require('../app/components/app'));
-        const AppString = React.renderToString(App({
+        const AppString = ReactDOMServer.renderToString(App({
           state: omit(state, 'takeover')
         }));
         const head = Helmet.rewind();

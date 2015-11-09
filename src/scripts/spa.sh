@@ -28,14 +28,15 @@ persistify $input \
            --transform [babelify --stage 0] \
            --transform [aliasify --require $aliases] \
            --external babelify/polyfill \
-           --external react \
-           --external svg4everybody \
            --external classnames \
            --external ellipsize \
            --external es6-promise \
            --external moment \
+           --external react \
+           --external react-dom \
            --external react-transition-manager \
            --external scrollmagic \
+           --external svg4everybody \
            --verbose \
            --outfile $filename
 

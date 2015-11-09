@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import Env from './adaptors/server/env';
 import App from './components/app';
@@ -11,7 +12,7 @@ window.env = Env;
 React.initializeTouchEvents(true);
 
 Flux.init().then(state => {
-  React.render(
+  ReactDOM.render(
     <App state={state} />,
     document.body
   );

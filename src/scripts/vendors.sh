@@ -18,14 +18,15 @@ else
 fi
 
 persistify --require babelify/polyfill \
-           --require react \
-           --require svg4everybody \
            --require classnames \
            --require ellipsize \
            --require es6-promise \
            --require moment \
+           --require react \
+           --require react-dom \
            --require react-transition-manager \
            --require scrollmagic \
+           --require svg4everybody \
            --verbose \
            --outfile $filename
 
