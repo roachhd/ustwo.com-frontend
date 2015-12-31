@@ -11,7 +11,7 @@ internal_path := /home/ustwo
 ## CLI aliases ################################################################
 AWK := awk
 CP := cp
-GIT := git
+GIT := git 
 GREP := grep
 CURL := curl
 MKDIR := mkdir -p
